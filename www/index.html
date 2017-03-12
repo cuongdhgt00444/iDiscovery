@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Include meta tag to ensure proper rendering and touch zooming -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+        <!-- Include the jQuery library -->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <!-- Include the jQuery Mobile library -->
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div data-role="page" id="addPage">
+            <div data-role="header" data-position="fixed">
+                <h1>Add Activity</h1>
+            </div>
+            <div class="ui-content" data-role="main">
+                <div class="ui-field-contain">
+                    <label for="txtActivityName">Activity name*</label>
+                    <input type="text" id="txtActivityName"/>
+                    <label for="txtLocation">Location</label>
+                    <input type="text" id="txtLocation"/>
+                    <label for="txtDate">Date*</label>
+                    <input type="date" id="txtDate"/>
+                    <label for="txtTime">Time</label>
+                    <input type="time" id="txtTime"/>
+                    <label for="txtReporter">Reporter*</label>
+                    <input type="text" id="txtReporter"/>
+                    <label for="btnAdd"></label>
+                    <a class="ui-btn" id="btnAdd" onclick="addActivity()" >Add</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                footer
+            </div>
+
+            <!--required field dialog popup-->
+            <div data-role="popup" id="requiredFieldPopupDialog">
+                <div data-role="header">
+                    <h1>Error</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <h3><label class="ui-icon-alert">Please fill all required fields marked with *</label> </h3>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+                </div>
+            </div>
+
+            <!--confirmation dialog popup-->
+            <div data-role="popup" id="addConfirmPopupDialog">
+                <div data-role="header">
+                    <h1>Confirmation</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <h3>Do you really want to add the following activity?</h3>
+                    <table data-role="table" class="ui-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Activity:</b></td>
+                                <td><label id="lblActivityName"></label></td>
+                            </tr>
+                            <tr>
+                                <td><b>Location:</b></td>
+                                <td><label id="lblLocation"></label></td>
+                            </tr>
+                            <tr>
+                                <td><b>Date:</b></td>
+                                <td><label id="lblDate"></label></td>
+                            </tr>
+                            <tr>
+                                <td><b>Time:</b></td>
+                                <td><label id="lblTime"></label></td>
+                            </tr>
+                            <tr>
+                                <td><b>Reporter:</b></td>
+                                <td><label id="lblReporter"></label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+
+                                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">No</a>
+                                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-forward ui-btn-icon-left" >Yes</a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
